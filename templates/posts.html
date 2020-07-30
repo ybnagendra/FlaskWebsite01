@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> Flask Website Posts </title>
+{%endblock%}
+
+{% block body %}
+<h1>All  Posts</h1>
+
+    {% for x in post %}
+        <h2>{{x.title}}</h2>
+
+    {% if x.Author %}
+        <h3>By: {{x.Author}}</h3>
+    {% else %}
+        <h3>By: N/A </h3>
+
+    {% endif %}
+
+        <p>{{x.content}}</p>
+    {%endfor%}
+{%endblock%}
